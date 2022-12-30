@@ -1,9 +1,33 @@
-# Mechatronics_Final
+# Elevator-Queuing-System-AB
 
 This program's purpose is a parking garage elevator queuing system. This was programmed in RSLogix in the Allen Bradley Studio 5000 software. RSLogix utilizes ladder logic programming. It was implemented and tested on an Allen Bradley PLC and HMI. This was my final project/exam for my mechatronics class at the University of Toledo.
 
 ---
 
+Inputs:
+| Sensor           | Function/State | Signal Assignment |
+|------------------|----------------|-------------------|
+| EntireGarageFull | Switch         | 1                 |
+| DoorButton       | Button         | 1                 |
+| RequestButton1   | Button         | 1                 |
+| RequestButton2   | Button         | 1                 |
+| RequestButton3   | Button         | 1                 |
+| RequestButton4   | Button         | 1                 |
+| RequestButton5   | Button         | 1                 |
+| CarInElevator    | Switch         | 1                 |
+
+Outputs:
+| Actuator     | Function/State                          | Signal Assignment |
+|--------------|-----------------------------------------|-------------------|
+| MotorUp      | Motor                                   | 1                 |
+| MotorDown    | Motor                                   | 1                 |
+| Brakes       | Braking mechanism                       | 1                 |
+| DoorOpen     | Door status                             | 1                 |
+| CurrentFloor | Location of elevator                    | 1-5               |
+| InProgress   | Floor has a request  in progress        | 1                 |
+| Requested    | Floor is requested and waiting in queue | 1                 |
+
+---
 I first started by doing a very rough draft of a state diagram, I/O tables, and the HMI display. With these done, I had a good grasp of how to progress further and the major hurdles I had to overcome with this project. There were 2 major parts of this program:
 
 1) The first part was queuing up requests. I had solved this by putting an array called RequestArray in my program. Whenever a request is made, a value is put into RequestArray[index] and then the index is incremented. The value put into the array is dependent on the floor that the request is being made from, so 1 for street level, 2 for the next, etc. Whenever a request is finished, the index is decremented and every value in the array is pushed down 1.
