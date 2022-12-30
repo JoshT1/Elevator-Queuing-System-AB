@@ -1,6 +1,6 @@
 # Mechatronics_Final
 
-This program's purpose is a parking garage elevator queuing system. This was programmed in RXLogix in the Allen Bradley Studio 5000 software. It was implemented and tested on an Allen Bradley PLC and HMI. This was my final project/exam for my mechatronics class at the University of Toledo.
+This program's purpose is a parking garage elevator queuing system. This was programmed in RSLogix in the Allen Bradley Studio 5000 software. RSLogix utilizes ladder logic programming. It was implemented and tested on an Allen Bradley PLC and HMI. This was my final project/exam for my mechatronics class at the University of Toledo.
 
 ---
 
